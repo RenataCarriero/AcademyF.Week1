@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AcademyF.Week1.Demo
 {
-    internal class Person
+    internal abstract class Person 
     {
         private string _firstName;
         public string FirstName { get { return _firstName; } set { _firstName = value; } }
@@ -15,7 +15,7 @@ namespace AcademyF.Week1.Demo
         public DateTime BirthDay { get; set; }
 
         private string _codiceFiscale; //Campo calcolato
-
+        protected string Soprannome { get; set; } = "pippo";
 
         public string CodiceFiscale
         {
@@ -46,5 +46,14 @@ namespace AcademyF.Week1.Demo
         {
             return $"{FirstName} {LastName} nato il: {BirthDay.ToShortDateString()}";
         }
+
+        public virtual void Saluta()
+        {
+            Console.WriteLine("Ciao sono una persona");
+        }
+
+        public abstract void ChiamaTizio();
+        
+
     }
 }

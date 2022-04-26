@@ -38,36 +38,56 @@ Console.WriteLine(primo);
 Console.WriteLine(secondo);
 
 
-Person persona = new Person();
-persona.FirstName = "Mario";
-persona.LastName = "Rossi";
-persona.BirthDay = new DateTime(1980, 5, 4);
+//Person persona = new Person();
+//persona.FirstName = "Mario";
+//persona.LastName = "Rossi";
+//persona.BirthDay = new DateTime(1980, 5, 4);
 
-Console.WriteLine($"Nome: {persona.FirstName} Cognome: {persona.LastName} Data di nascita: {persona.BirthDay.ToShortDateString()}");
-Person persona2 = persona;
-Console.WriteLine($"Nome: {persona2.FirstName} Cognome: {persona2.LastName} Data di nascita: {persona2.BirthDay.ToShortDateString()}");
+//Console.WriteLine($"Nome: {persona.FirstName} Cognome: {persona.LastName} Data di nascita: {persona.BirthDay.ToShortDateString()}");
+//Person persona2 = persona;
+//Console.WriteLine($"Nome: {persona2.FirstName} Cognome: {persona2.LastName} Data di nascita: {persona2.BirthDay.ToShortDateString()}");
 
-persona2.FirstName = "Giuseppe";
-Console.WriteLine($"Nome: {persona.FirstName} Cognome: {persona.LastName} Data di nascita: {persona.BirthDay.ToShortDateString()}");
-Console.WriteLine($"Nome: {persona2.FirstName} Cognome: {persona2.LastName} Data di nascita: {persona2.BirthDay.ToShortDateString()}");
+//persona2.FirstName = "Giuseppe";
+//Console.WriteLine($"Nome: {persona.FirstName} Cognome: {persona.LastName} Data di nascita: {persona.BirthDay.ToShortDateString()}");
+//Console.WriteLine($"Nome: {persona2.FirstName} Cognome: {persona2.LastName} Data di nascita: {persona2.BirthDay.ToShortDateString()}");
 
-Console.WriteLine(persona);
-Console.WriteLine(persona.ToString());
-
-
-Person p3 = null;
-Person p4 = new Person() { FirstName = "Renata", LastName = "Carriero", BirthDay= new DateTime(1987, 04, 01) };
-Console.WriteLine(p4.ToString());
-Console.WriteLine(p4.CodiceFiscale);
-Console.WriteLine("--------------------------");
-Console.WriteLine(p4.GetInfoPersona());
-Console.WriteLine(p4.GetInfoPersona("Sposata"));
+//Console.WriteLine(persona);
+//Console.WriteLine(persona.ToString());
 
 
-Employee impiegato1 = new Employee();
+//Person p3 = null;
+//Person p4 = new Person() { FirstName = "Renata", LastName = "Carriero", BirthDay= new DateTime(1987, 04, 01) };
+//Console.WriteLine(p4.ToString());
+//Console.WriteLine(p4.CodiceFiscale);
+//Console.WriteLine("--------------------------");
+//Console.WriteLine(p4.GetInfoPersona());
+//Console.WriteLine(p4.GetInfoPersona("Sposata"));
+
+Console.WriteLine("--Ereditarietà---------");
+Console.WriteLine("--Impiegato---------");
+Person impiegato1 = new Employee();
 impiegato1.FirstName = "Giuseppe";
 impiegato1.LastName = "Verdi";
 Console.WriteLine(impiegato1);
+impiegato1.Saluta();
+impiegato1.ChiamaTizio();
+
+Console.WriteLine("--Studente---------");
+Person studente = new Studente() { FirstName = "Maria", LastName = "Bianchi", BirthDay = new DateTime(1999, 01, 01), Matricola = 1234 };
+studente.Saluta();
+studente.ChiamaTizio();
+
+List<Person> persone=new List<Person>();
+persone.Add(studente);
+persone.Add(impiegato1);
+
+Console.WriteLine("--Stampe da lista---------");
+foreach (Person p in persone)
+{
+    Console.WriteLine(p.ToString());
+    p.Saluta();
+    p.ChiamaTizio();
+}
 
 
 
