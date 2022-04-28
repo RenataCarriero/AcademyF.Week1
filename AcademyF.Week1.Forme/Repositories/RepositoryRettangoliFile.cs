@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AcademyF.Week1.Forme.Repositories
 {
-    internal class RepositoryRettangoliFile : IRepository<Rettangolo>
+    internal class RepositoryRettangoliFile : IRepositoryRettangolo
     {
         string path = @"C:\Users\RenataCarriero\source\repos\AcademyF.Week1\AcademyF.Week1.Forme\Repositories\Rettangoli.txt";
         public bool Aggiungi(Rettangolo item)

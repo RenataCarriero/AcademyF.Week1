@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AcademyF.Week1.Forme.Repositories
 {
-    internal class RepositoryRettangoliMOCK : IRepository<Rettangolo>
+    internal class RepositoryRettangoliMOCK : IRepositoryRettangolo
     {
         private static List<Rettangolo> rettangoli = new List<Rettangolo>()
         {
