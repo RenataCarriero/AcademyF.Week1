@@ -1,4 +1,5 @@
-﻿using AcademyF.Week1.Forme.Repositories;
+﻿using AcademyF.Week1.Forme.Interfaces;
+using AcademyF.Week1.Forme.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,9 @@ namespace AcademyF.Week1.Forme
 {
     internal static class InterazioneUtente
     {
-        static RepositoryRettangoliMOCK repoRettangoli= new RepositoryRettangoliMOCK();
+        //static RepositoryRettangoliMOCK repoRettangoli= new RepositoryRettangoliMOCK();
+        //static RepositoryRettangoliFile repoRettangoli= new RepositoryRettangoliFile();
+        static IRepository<Rettangolo> repoRettangoli = new RepositoryRettangoliFile();
         internal static void Start()
         {
             bool continua = true;
@@ -22,10 +25,10 @@ namespace AcademyF.Week1.Forme
                         VisualizzaTuttiIRettangoli();
                         break;
                     case 2:
-                        //AggiungiRettangolo();
+                        AggiungiRettangolo();
                         break;
                     case 3:
-                        //RicercaRettangoloPerNome();
+                        RicercaRettangoloPerNome();
                         break;
                     case 0:
                         continua = false;
@@ -35,6 +38,57 @@ namespace AcademyF.Week1.Forme
                         Console.WriteLine("Scelta errata.");
                         break;
                 }
+            }
+        }
+
+        private static void RicercaRettangoloPerNome()
+        {
+            Console.WriteLine("Inserisci il nome del nuovo rettangolo che vuoi cercare");
+            string nome = Console.ReadLine();
+            var listaRettangoli = repoRettangoli.GetAll();
+            foreach (var r in listaRettangoli)
+            {
+                if (r.Name == nome)
+                {
+                    r.Disegna();
+                    return;
+                }
+            }
+            Console.WriteLine("Rettangolo inesistente");
+        }
+
+        private static void AggiungiRettangolo()
+        {
+            Console.WriteLine("Inserisci il nome del nuovo rettangolo");
+            string nome=Console.ReadLine();
+            Console.WriteLine("Inserisci la base del nuovo rettangolo");
+            double baseRettangolo;
+            while(!double.TryParse(Console.ReadLine(), out baseRettangolo))
+            {
+                Console.WriteLine("Riprova. Inserisci un numero.");
+            };
+            //Console.WriteLine("Inserisci l'altezza del nuovo rettangolo");
+            double altezzaRettangolo;
+            //while (!double.TryParse(Console.ReadLine(), out altezzaRettangolo))
+            //{
+            //    Console.WriteLine("Riprova. Inserisci un numero.");
+            //};
+            do
+            {
+                Console.WriteLine("Inserisci l'altezza del nuovo rettangolo");
+
+            } while (!double.TryParse(Console.ReadLine(), out altezzaRettangolo));
+
+            var nuovoRettangolo = new Rettangolo() { Name = nome, Base = baseRettangolo, Altezza = altezzaRettangolo };
+        
+            var esito=repoRettangoli.Aggiungi(nuovoRettangolo);
+            if (esito == true)
+            {
+                Console.WriteLine("Rettangolo aggiunto correttamente");
+            }
+            else
+            {
+                Console.WriteLine("Errore");
             }
         }
 
