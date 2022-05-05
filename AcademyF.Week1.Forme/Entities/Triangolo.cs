@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AcademyF.Week1.Forme
 {
-    internal class Triangolo: Forma
+    public class Triangolo: Forma
     {
         public double Base { get; set; }
         public double Altezza { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AcademyF.Week1.Forme
 {
-    internal class Cerchio: Forma
+    public class Cerchio: Forma
     {
         public int X { get; set; }
         public int Y { get; set; }

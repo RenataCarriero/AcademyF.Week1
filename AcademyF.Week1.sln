@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcademyF.Week1.Prova", "Aca
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcademyF.Week1.Forme", "AcademyF.Week1.Forme\AcademyF.Week1.Forme.csproj", "{3C0B4BF0-D074-4A98-A360-7EB614E1149F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademyF.Week1.ScritturaLetturaDaFile", "AcademyF.Week1.ScritturaLetturaDaFile\AcademyF.Week1.ScritturaLetturaDaFile.csproj", "{6E69E6A7-5270-4E3E-A9B4-CB9B1D27BE19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcademyF.Week1.ScritturaLetturaDaFile", "AcademyF.Week1.ScritturaLetturaDaFile\AcademyF.Week1.ScritturaLetturaDaFile.csproj", "{6E69E6A7-5270-4E3E-A9B4-CB9B1D27BE19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademyF.Week2.EsercitazioneLinq", "AcademyF.Week2.EsercitazioneLinq\AcademyF.Week2.EsercitazioneLinq.csproj", "{07E71BC8-5767-42B2-9B49-65CE73722CF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6E69E6A7-5270-4E3E-A9B4-CB9B1D27BE19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E69E6A7-5270-4E3E-A9B4-CB9B1D27BE19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E69E6A7-5270-4E3E-A9B4-CB9B1D27BE19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07E71BC8-5767-42B2-9B49-65CE73722CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07E71BC8-5767-42B2-9B49-65CE73722CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07E71BC8-5767-42B2-9B49-65CE73722CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07E71BC8-5767-42B2-9B49-65CE73722CF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

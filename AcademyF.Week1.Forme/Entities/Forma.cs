@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AcademyF.Week1.Forme
 {
-    internal class Forma
+    public class Forma
     {
         public string Name { get; set; }
         public double Area { get { return CalcolaArea(); } }

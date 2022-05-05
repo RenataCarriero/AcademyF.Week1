@@ -5,4 +5,8 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AcademyF.Week1.Forme\AcademyF.Week1.Forme.csproj" />
+  </ItemGroup>
+
 </Project>
